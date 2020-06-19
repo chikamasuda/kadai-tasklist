@@ -13,6 +13,7 @@ class TasksController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+     
     public function index()
     {
         $tasks = Task::all();
