@@ -4,6 +4,10 @@
 
 <h1>id = {{ $task->id }} のタスク詳細ページ</h1>
 
+    <div class="card-header">
+        <h2 class="card-title">{{ $task->name }}</h2>
+    </div>
+ 
     <table class="table table-bordered">
         <tr>
             <th>id</th>

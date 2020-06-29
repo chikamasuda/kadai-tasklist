@@ -2,9 +2,10 @@
 
 @section('content')
 
-　　　　<h1>タスク一覧</h1>
-　　　　
-　　　　@if (count($tasks) > 0)
+　　　　@if (Auth::check())
+                
+            <h1>タスク一覧</h1>
+            <h3 class="card-title">{{ Auth::user()->name }}</h3>
 　　　　    <table class="table table-striped">
 　　　　        <thead>
 　　　　            <tr>
@@ -23,8 +24,17 @@
 　　　　            @endforeach
 　　　　        </tbody>
 　　　　    </table>
-　　　　@endif
 　　　　
 　　　　{!! link_to_route('tasks.create','新規タスクの投稿', [], ['class' => 'btn btn-primary' ]) !!}
+　　　　
+　　　　
+    @else
+    <div class="center jumbotron">
+        <div class="text-center">
+            <h1>Welcome to tasklist</h1>
+            {!! link_to_route('signup.get', 'Sign up now!', [], ['class' => 'btn btn-lg btn-primary']) !!}
+        </div>
+    </div>
+    @endif
 
 @endsection
