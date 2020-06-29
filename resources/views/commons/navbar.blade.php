@@ -10,6 +10,7 @@
             <ul class="navbar-nav mr-auto"></ul>
             <ul class="nav navbar-nav">
                 @if (Auth::check())
+                <li class="nav-item">{!! link_to_route('tasks.create', '新規タスクの追加', [], ['class' => 'nav-link']) !!}</li>
                 <li class="nav-item">{!! link_to_route('logout.get', 'Logout', [],['class' =>'nav-link']) !!}</li>
             </ul>
                 @else
